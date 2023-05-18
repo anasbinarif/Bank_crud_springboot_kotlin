@@ -1,0 +1,26 @@
+#spring.security.user.name=anas
+#spring.security.user.password=12345
+
+auth0:
+  audience: http://Bank.demo
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-kpm0ka7qpvcnlhj4.us.auth0.com/
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/jwt_security
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
